@@ -5,7 +5,7 @@ namespace DiaryManagerTests
     public class UnitTest1
     {
         [Fact]
-        public void ReadDiaryFileTest()
+        public void ReadDiaryFileTest() 
         {
             // Arrange 
             string filepath = Path.Combine(Environment.CurrentDirectory, "dailydiary.txt");
@@ -17,7 +17,7 @@ namespace DiaryManagerTests
             string actualContent = File.ReadAllText(filepath);
             Assert.Equal(ExpectedContent, actualContent);
         }
-
+           
         [Fact]
         public void AddToDiaryFileTest()
         {
