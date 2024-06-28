@@ -49,7 +49,7 @@ namespace DiaryManager
 
 
 
-        // Counting the total number of entries and Display it to the user 
+        // Counting the total number of Lines and Display it to the user 
         public static void CountEntries(string filepath)
         {
             string[] fileContent = File.ReadAllLines(filepath);
