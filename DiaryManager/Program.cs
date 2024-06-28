@@ -9,9 +9,13 @@ namespace DiaryManager
             try
             {
                 int option = 0;
+
+
                 while (option != 6)
                 {
                     string filepath = Path.Combine(Environment.CurrentDirectory, "dailydiary.txt");
+
+
                     Console.WriteLine("Which Option Do You Want ?\n1.Reading The Entiar Diary.\n2.Add Enties to Your Diary" +
                     "\n3.Delete An Entries.\n4.Counting Numbers Of The Entries.\n5.Read Data For Specific date." +
                    "\n6.Exit");
@@ -21,7 +25,9 @@ namespace DiaryManager
                     if (option == 1)
                     {
                         Console.WriteLine("File content:\n");
+
                         Console.WriteLine( DailyDiary.ReadAllTextMethod(filepath));
+
                     }
                     else
                 // Add An Entries
@@ -32,7 +38,9 @@ namespace DiaryManager
                         Console.WriteLine("Write The your content.");
                         string content = Console.ReadLine();
                         DailyDiary.AddEntries(filepath, new Entry { Date = date }, new Entry { Content = content });
+
                         Console.WriteLine(DailyDiary.ReadAllTextMethod(filepath));
+
                     }
                     else
                 // Delete An Entries
@@ -41,13 +49,15 @@ namespace DiaryManager
                         Console.WriteLine("Write the content you want to Delete");
                         string content = Console.ReadLine();
                         DailyDiary.DeleteEntries(filepath, new Entry { Content = content });
+
                         Console.WriteLine(DailyDiary.ReadAllTextMethod(filepath));
+
                     }
                     else
                 //Counting the total number of entries and Display it to the user
                 if (option == 4)
                     {
-                       
+
                         DailyDiary.CountEntries(filepath);
                     }
                     else
@@ -77,7 +87,9 @@ namespace DiaryManager
             }
             finally
             {
+
                 Console.WriteLine("Finish Edditing!");
+
             }
         }
     }
